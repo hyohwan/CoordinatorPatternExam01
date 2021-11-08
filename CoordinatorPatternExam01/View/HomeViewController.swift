@@ -39,34 +39,25 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigation()
-        setupNavBarAppearance()
     }
     
     private func setupNavigation() {
-//        guard let nav = navigationController else { return }
-//        print("nav: \(nav)")
         navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.backgroundColor = .clear
-//        navigationController?.view.backgroundColor = .clear
-    }
-    
-    private func setupNavBarAppearance() {
+        navigationController?.view.backgroundColor = .gray
         if #available(iOS 13, *) {
             let appearance = UINavigationBarAppearance()
-//            appearance.configureWithOpaqueBackground()
-//            appearance.configureWithDefaultBackground()
             appearance.configureWithTransparentBackground()
-//            navigationController?.navigationBar.backgroundColor = .clear
             navigationController?.navigationBar.standardAppearance = appearance
             navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        } else {
+            navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            navigationController?.navigationBar.shadowImage = UIImage()
+            navigationController?.navigationBar.backgroundColor = .clear
         }
     }
     
     private func setupViews() {
         view.backgroundColor = .gray
-//        let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.distribution = .equalSpacing
@@ -76,9 +67,7 @@ class HomeViewController: UIViewController {
         view.addSubview(stack)
         NSLayoutConstraint.activate([
             stack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            stack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-//            stack.widthAnchor.constraint(equalTo: view.widthAnchor),
-//            stack.heightAnchor.constraint(equalTo: view.heightAnchor)
+            stack.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     

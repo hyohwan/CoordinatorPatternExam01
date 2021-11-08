@@ -29,25 +29,23 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigation()
-        setupNavBarAppearance()
     }
     
     private func setupNavigation() {
-        guard let nav = navigationController else { return }
-        nav.navigationBar.barTintColor = .green
-        nav.navigationBar.isTranslucent = false
-        nav.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.yellow]
-        nav.navigationBar.backgroundColor = .gray
-    }
-
-    private func setupNavBarAppearance() {
-
+        navigationItem.title = "Detail"
+        navigationController?.navigationBar.isTranslucent = false
         if #available(iOS 13, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = UIColor.purple
+            appearance.backgroundColor = UIColor.yellow
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.gray]
+            appearance.shadowColor = .clear
             navigationController?.navigationBar.standardAppearance = appearance
             navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        } else {
+            navigationController?.navigationBar.barTintColor = .yellow
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.gray]
+            navigationController?.navigationBar.shadowImage = UIImage()
         }
     }
     
