@@ -7,10 +7,18 @@
 
 import UIKit
 
+//class DetailViewController: UIViewController, CoordinatorViewable {
 class DetailViewController: UIViewController {
     
-    weak var coordinator: HomeCoordinator?
-    var viewModel: DetailViewModel?
+//    var coord: Coordinator? { coordinator }
+    weak var coordinator: FeedCoordinator?
+    var viewModel: FeedViewModel?
+    var willPop: Bool = false {
+        didSet {
+            guard oldValue != willPop else { return }
+            print("DVC willPop \(willPop)")
+        }
+    }
     
     private let button : UIButton = {
         let button = UIButton()
@@ -24,11 +32,29 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+//        navigationController?.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigation()
+        willPop = false
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let vcs = navigationController?.viewControllers {
+            willPop = !vcs.contains(where: { $0 === self })
+        }
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if willPop {
+            print("DVC didPop")
+            coordinator?.didFinish()
+        }
+    }
+    deinit {
+        print("DVC deinit")
     }
     
     private func setupNavigation() {
@@ -60,7 +86,6 @@ class DetailViewController: UIViewController {
     
     @objc
     private func buttonTapped() {
-        let title = (viewModel?.title ?? "") + " > Edit"
-        coordinator?.pushEditor(viewModel: EditorViewModel(title: title))
+        coordinator?.pushEditor()
     }
 }

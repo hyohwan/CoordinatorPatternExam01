@@ -20,6 +20,8 @@
 		9D4FA4B42735329800344C69 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4FA4B32735329800344C69 /* EditorViewController.swift */; };
 		9D4FA4B6273532A900344C69 /* EditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4FA4B5273532A900344C69 /* EditorViewModel.swift */; };
 		9DD839442738FF9100B6540B /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD839432738FF9100B6540B /* UIImage+.swift */; };
+		9DD8394627390BE200B6540B /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD8394527390BE200B6540B /* FeedCoordinator.swift */; };
+		9DD8394827390C3200B6540B /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD8394727390C3200B6540B /* FeedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		9D4FA4B32735329800344C69 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		9D4FA4B5273532A900344C69 /* EditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewModel.swift; sourceTree = "<group>"; };
 		9DD839432738FF9100B6540B /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		9DD8394527390BE200B6540B /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
+		9DD8394727390C3200B6540B /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 				9D4FA4A12735241100344C69 /* Coordinator.swift */,
 				9D4FA4A32735246A00344C69 /* AppCoordinator.swift */,
 				9D4FA4A5273524F100344C69 /* HomeCoordinator.swift */,
+				9DD8394527390BE200B6540B /* FeedCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 				9D4FA4A82735254500344C69 /* HomeViewModel.swift */,
 				9D4FA4AF27352B1D00344C69 /* DetailViewModel.swift */,
 				9D4FA4B5273532A900344C69 /* EditorViewModel.swift */,
+				9DD8394727390C3200B6540B /* FeedViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -194,6 +200,7 @@
 				9D4FA4A92735254500344C69 /* HomeViewModel.swift in Sources */,
 				9D4FA4B6273532A900344C69 /* EditorViewModel.swift in Sources */,
 				9D4FA4B42735329800344C69 /* EditorViewController.swift in Sources */,
+				9DD8394627390BE200B6540B /* FeedCoordinator.swift in Sources */,
 				9D4FA4AC273525B900344C69 /* HomeViewController.swift in Sources */,
 				9D4FA4B027352B1D00344C69 /* DetailViewModel.swift in Sources */,
 				9D4FA4A42735246A00344C69 /* AppCoordinator.swift in Sources */,
@@ -201,6 +208,7 @@
 				9DD839442738FF9100B6540B /* UIImage+.swift in Sources */,
 				9D4FA4A6273524F100344C69 /* HomeCoordinator.swift in Sources */,
 				9D4FA4AE27352B1100344C69 /* DetailViewController.swift in Sources */,
+				9DD8394827390C3200B6540B /* FeedViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

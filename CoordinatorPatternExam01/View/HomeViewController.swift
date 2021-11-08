@@ -7,6 +7,10 @@
 
 import UIKit
 
+//protocol CoordinatorViewable {
+//    var coord: Coordinator? { get }
+//}
+
 class HomeViewController: UIViewController {
     
     weak var coordinator: HomeCoordinator?
@@ -73,12 +77,11 @@ class HomeViewController: UIViewController {
     
     @objc
     private func buttonATapped() {
-//        detailViewModel = DetailViewModel(title: "Detail A")
-        coordinator?.pushDetail(viewModel: DetailViewModel(title: "Detail A"))
+        coordinator?.pushDetail(viewModel: FeedViewModel(title: "Detail A"))
     }
     
     @objc
     private func buttonBTapped() {
-        coordinator?.pushDetail(viewModel: DetailViewModel(title: "Detail B"))
+        coordinator?.pushDetail(viewModel: FeedViewModel(title: "Detail B"))
     }
 }
