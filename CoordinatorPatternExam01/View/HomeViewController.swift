@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     weak var coordinator: HomeCoordinator?
-    weak var viewModel: HomeViewModel?
+    var viewModel: HomeViewModel?
     
     private let buttonA : UIButton = {
         let button = UIButton()
@@ -73,11 +73,12 @@ class HomeViewController: UIViewController {
     
     @objc
     private func buttonATapped() {
-        coordinator?.pushDetail(viewModel: DetailViewModel(title: "detail A"))
+//        detailViewModel = DetailViewModel(title: "Detail A")
+        coordinator?.pushDetail(viewModel: DetailViewModel(title: "Detail A"))
     }
     
     @objc
     private func buttonBTapped() {
-        coordinator?.pushDetail(viewModel: DetailViewModel(title: "detail B"))
+        coordinator?.pushDetail(viewModel: DetailViewModel(title: "Detail B"))
     }
 }

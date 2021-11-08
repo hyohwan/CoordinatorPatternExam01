@@ -13,6 +13,4 @@ class DetailViewModel {
     }
     
     var title: String
-    
-    
 }

@@ -10,7 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
     
     weak var coordinator: HomeCoordinator?
-    weak var viewModel: DetailViewModel?
+    var viewModel: DetailViewModel?
     
     private let button : UIButton = {
         let button = UIButton()
@@ -32,7 +32,7 @@ class DetailViewController: UIViewController {
     }
     
     private func setupNavigation() {
-        navigationItem.title = "Detail"
+        navigationItem.title = viewModel?.title
         navigationController?.navigationBar.isTranslucent = false
         if #available(iOS 13, *) {
             let appearance = UINavigationBarAppearance()
@@ -60,6 +60,7 @@ class DetailViewController: UIViewController {
     
     @objc
     private func buttonTapped() {
-        coordinator?.pushEditor(viewModel: EditorViewModel())
+        let title = (viewModel?.title ?? "") + " > Edit"
+        coordinator?.pushEditor(viewModel: EditorViewModel(title: title))
     }
 }

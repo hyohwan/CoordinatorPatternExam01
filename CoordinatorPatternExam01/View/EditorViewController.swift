@@ -10,7 +10,7 @@ import UIKit
 class EditorViewController: UIViewController {
     
     weak var coordinator: HomeCoordinator?
-    weak var viewModel: EditorViewModel?
+    var viewModel: EditorViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class EditorViewController: UIViewController {
     }
     
     private func setupNavigation() {
-        navigationItem.title = "Editor"
+        navigationItem.title = viewModel?.title
         navigationController?.navigationBar.isTranslucent = false
         if #available(iOS 13, *) {
             let appearance = UINavigationBarAppearance()

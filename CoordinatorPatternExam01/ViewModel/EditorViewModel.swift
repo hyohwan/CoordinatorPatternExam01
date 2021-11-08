@@ -8,5 +8,9 @@
 import Foundation
 
 class EditorViewModel {
+    internal init(title: String) {
+        self.title = title
+    }
     
+    var title: String
 }
